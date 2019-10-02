@@ -1,0 +1,9 @@
+clc;
+close all;
+clear all;
+x=randi([0,1],3072,1);
+x_enc=Encoder(x,1/2);
+x_int=Interleaver(x_enc,4,64,1/2);
+x_deint=Deinterleaver(x_int,4,64,1/2);
+x_dec=Decoder(x_deint,1/2)
+
